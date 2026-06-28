@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Tea Journal - Since</title>
+    <style>
+        /* Base Styling & Theme (Inspired by 1000226802.png) */
+        :root {
+            --bg-dark: #121212;
+            --bg-card: #1e1b18;
+            --cream: #f4edd2;
+            --olive: #707a5a;
+            --olive-dark: #4a533c;
+            --text-light: #e6dfcb;
+            --text-muted: #a69f8c;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Georgia', serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Hero / Header Section */
+        header {
+            text-align: center;
+            padding: 4rem 2rem 2rem 2rem;
+            background: linear-gradient(to bottom, #1a1715, var(--bg-dark));
+        }
+
+        .logo-container img {
+            max-width: 280px;
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 2px solid var(--olive);
+        }
+
+        .tagline {
+            font-style: italic;
+            color: var(--text-muted);
+            margin-top: 1rem;
+            font-size: 1.2rem;
+        }
+
+        /* Horizontal Scroll Section */
+        .menu-section {
+            padding: 3rem 0;
+            max-width: 100%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--cream);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '🌿';
+            display: block;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+            color: var(--olive);
+        }
+
+        /* The Scroll Container */
+        .scroll-container {
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            padding: 1rem 2rem 2.5rem 2rem;
+            scroll-behavior: smooth;
+            scrollbar-width: auto; /* Uses standard scrollbar */
+        }
+
+        /* Custom Scrollbar Styles for Webkit Browsers */
+        .scroll-container::-webkit-scrollbar {
+            height: 10px;
+        }
+
+        .scroll-container::-webkit-scrollbar-track {
+            background: #1a1715;
+            border-radius: 10px;
+        }
+
+        .scroll-container::-webkit-scrollbar-thumb {
+            background: var(--olive);
+            border-radius: 10px;
+        }
+
+        .scroll-container::-webkit-scrollbar-thumb:hover {
+            background: var(--cream);
+        }
+
+        /* Individual Product Cards */
+        .product-card {
+            flex: 0 0 320px; /* Ensures cards don't shrink and stay fixed width */
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(112, 122, 90, 0.2);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--olive);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background-color: #2a2522; /* Placeholder bg color if image is missing */
+            display: block;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-name {
+            font-size: 1.4rem;
+            color: var(--cream);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-description {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-family: sans-serif;
+            font-weight: 300;
+            line-height: 1.4;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            background-color: #0d0d0d;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(112, 122, 90, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Logo Section -->
+    <header>
+        <div class="logo-container">
+            <!-- Referencing your provided logo file -->
+            <img src="1000226802.png" alt="The Tea Journal Since Est. 2024">
+        </div>
+        <p class="tagline">Crafted Flavors, Timeless Moments.</p>
+    </header>
+
+    <!-- Menu Section with Scroll Attribute -->
+    <main class="menu-section">
+        <h2 class="section-title">Our Menu Journal</h2>
+        
+        <div class="scroll-container">
+            
+            <!-- Product 1: Ginger Tea -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?w=500&auto=format&fit=crop" alt="Ginger Tea" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Ginger Tea</h3>
+                    <p class="product-description">A warming, aromatic brew infused with freshly crushed ginger root and premium tea leaves. Perfect for any time of day.</p>
+                </div>
+            </div>
+
+            <!-- Product 2: French Fries -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=500&auto=format&fit=crop" alt="French Fries" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Classic French Fries</h3>
+                    <p class="product-description">Golden, crispy on the outside, and fluffy on the inside. Lightly seasoned with sea salt.</p>
+                </div>
+            </div>
+
+            <!-- Product 3: Loaded Fries -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1585109649139-366815a0d713?w=500&auto=format&fit=crop" alt="Loaded Fries" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Loaded Fries</h3>
+                    <p class="product-description">Our signature crispy fries smothered in warm cheese sauce, jalapenos, and a drizzle of secret cafe sauce.</p>
+                </div>
+            </div>
+
+            <!-- Product 4: Shawarma -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1644787618059-de58f6236b77?w=500&auto=format&fit=crop" alt="Shawarma" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Signature Shawarma</h3>
+                    <p class="product-description">Slow-roasted, tender spiced meat wrapped tightly in a soft flatbread with garlic toum and pickles.</p>
+                </div>
+            </div>
+
+            <!-- Product 5: Grilled Chicken -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=500&auto=format&fit=crop" alt="Grilled Chicken" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Flame Grilled Chicken</h3>
+                    <p class="product-description">Succulent chicken pieces marinated in house herbs and char-grilled to smoky perfection.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2026 The Tea Journal - Since. Established 2024. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Optional: Smooth desktop mouse wheel interaction for horizontal scrolling -->
+    <script>
+        const scrollContainer = document.querySelector('.scroll-container');
+        
+        scrollContainer.addEventListener('wheel', (evt) => {
+            evt.preventDefault();
+            scrollContainer.scrollLeft += evt.deltaY;
+        });
+    </script>
+</body>
+</html>
